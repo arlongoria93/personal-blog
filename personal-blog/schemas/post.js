@@ -4,7 +4,7 @@ export default {
   type: "document",
   fields: [
     { name: "title", title: "Title", type: "string" },
-    { name: "stack", title: "Stack", type: "string" },
+    { name: "stack", title: "Stack", type: "array", of: [{ type: "string" }] },
     {
       name: "slug",
       title: "Slug",
