@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import { GiAncientSword } from "react-icons/gi";
+
+export const getServerSideProps = async () => {};
+
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <Head>
         <title>Angelo Longoria</title>
         <meta
@@ -14,6 +14,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/sword-in-stone.png" />
       </Head>
+      <div></div>
     </div>
   );
 };
