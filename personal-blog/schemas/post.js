@@ -17,5 +17,6 @@ export default {
       },
     },
     { name: "description", title: "Description", type: "text" },
+    { name: "link", title: "Link", type: "url" },
   ],
 };
