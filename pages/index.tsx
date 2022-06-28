@@ -26,7 +26,7 @@ interface Props {
 }
 const Home = ({ projects }: Props) => {
   return (
-    <div className="max-w-7xl mx-auto border border-yellow-200">
+    <div className="max-w-5xl mx-auto ">
       <Head>
         <title>angelo@longoria</title>
         <meta
@@ -37,26 +37,22 @@ const Home = ({ projects }: Props) => {
       </Head>
 
       {/* Left content section */}
-      <div className="flex justify-between">
-        <div className="max-w-lg items-center p-4 justify-center border border-red-400 flex flex-col">
+      <div className="flex w-full mx-auto justify-between md:flex-row flex-col">
+        <div className="md:max-w-xl2 w-full mx-auto items-center p-4 justify-center  border border-red-400 flex flex-col">
           <p>Left Content Section</p>
         </div>
 
         {/* Right content section */}
-        <div>
-          <div className="w-full flex flex-col justify-start border border-green-700 prose ">
-            <h1>Social</h1>
-            <ul className="list-none flex flex-col justify-start items-center p-0 text-left border border-yellow-200">
-              <li>
-                <h3>Github</h3>
-              </li>
-              <li>
-                <h3>LinkedIn</h3>
-              </li>
-              <li>
-                <h3>Twitter</h3>
-              </li>
-            </ul>
+        <div className="hidden lg:flex flex-col w-full md:max-w-sm  md:order-2">
+          <div className="w-full border border-purple-300">
+            <div className="flex flex-row items-center justify-around w-full p-0 border border-yellow-800">
+              <h3 className="text-accent hidden md:visible normal-case text-xl font-bold">
+                SOCIAL
+              </h3>
+              <h3>Github</h3>
+              <h3>LinkedIn</h3>
+              <h3>Twitter</h3>
+            </div>
           </div>
           {/* <div className="max-w-2xl w-full flex flex-col items-center  space-y-12 border border-green-300">
             {projects.map((project) => (
