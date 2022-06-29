@@ -1,6 +1,6 @@
 export default {
-  name: "project",
-  title: "Project",
+  name: "post",
+  title: "Post",
   type: "document",
   fields: [
     { name: "title", title: "Title", type: "string" },
@@ -18,5 +18,16 @@ export default {
     },
     { name: "description", title: "Description", type: "text" },
     { name: "link", title: "Link", type: "url" },
+    {
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
+    },
+    {
+      name: "body",
+      title: "Body",
+      type: "blockContent",
+    },
   ],
 };

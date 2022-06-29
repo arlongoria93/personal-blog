@@ -3,9 +3,10 @@ import Hero from "../components/Hero";
 import Project from "../components/Project";
 import { getClient } from "../lib/sanity.server";
 import { Projects } from "../typings";
+import Link from "next/link";
 
 export const getServerSideProps = async () => {
-  const allProjectQuery = `*[_type == 'project']{
+  const allProjectQuery = `*[_type == 'post']{
     _id,
    title,
    stack,
