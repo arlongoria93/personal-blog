@@ -12,6 +12,8 @@ export const getServerSideProps = async () => {
    stack,
    slug,
    description,
+   category[0]->{title},
+   body,
    link } `;
   const projects = await getClient(false).fetch(allProjectQuery);
   return { props: { projects } };
@@ -21,6 +23,7 @@ interface Props {
   projects: Projects[];
 }
 const Home = ({ projects }: Props) => {
+  console.log(projects);
   return (
     <div className="max-w-3xl lg:max-w-5xl mx-auto">
       <Head>

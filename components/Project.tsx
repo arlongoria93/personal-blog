@@ -5,7 +5,7 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 import Link from "next/link";
 type project = Projects;
 
-const Project = ({ _id, title, description, stack, link, slug }: project) => {
+const Project = ({ _id, title, description, slug, category }: project) => {
   return (
     <Link href={`/project/${slug.current}`}>
       <div
@@ -26,8 +26,8 @@ const Project = ({ _id, title, description, stack, link, slug }: project) => {
           </div>
         </div>
         <div>
-          <h3 className="font-roboto font-bold pr-4 pt-1 mr-2 pb-1 pl-4 bg-base-300 rounded">
-            Tag
+          <h3 className="font-roboto text-neutral font-bold pr-4 pt-1 mr-2 pb-1 pl-4 bg-base-content rounded">
+            {category.title}
           </h3>
         </div>
       </div>

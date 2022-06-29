@@ -19,8 +19,8 @@ export default {
     { name: "description", title: "Description", type: "text" },
     { name: "link", title: "Link", type: "url" },
     {
-      name: "categories",
-      title: "Categories",
+      name: "category",
+      title: "Category",
       type: "array",
       of: [{ type: "reference", to: { type: "category" } }],
     },
