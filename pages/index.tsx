@@ -38,7 +38,7 @@ const Home = ({ projects }: Props) => {
       <Hero />
       {/* Recent Post Divider */}
       <div className="divider"></div>
-      <h1 className="text-accent font-raleway font-bold">RECENT POST</h1>
+      <h1 className="text-accent font-raleway font-bold">RECENTLY PUBLISHED</h1>
       {/* Left content section */}
       <div className="flex w-full mx-auto justify-between md:flex-row flex-col">
         <div className="mt-10 w-full mx-auto items-center justify-center  border border-red-400 border-opacity-10 flex flex-col space-y-8">

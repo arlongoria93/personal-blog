@@ -12,6 +12,7 @@ const Project = ({ _id, title, description, slug, category }: project) => {
         key={_id}
         className="flex group flex-row rounded hover:cursor-pointer  justify-between space-y-4   w-full "
       >
+        <div></div>
         <div className="flex flex-col space-y-4">
           <h2 className="text-2xl font-raleway font-bold group-hover:text-info ">
             {title}
