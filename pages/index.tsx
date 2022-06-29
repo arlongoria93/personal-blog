@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Hero from "../components/Hero";
 import Project from "../components/Project";
 import { getClient } from "../lib/sanity.server";
 import { Projects } from "../typings";
@@ -10,15 +11,9 @@ export const getServerSideProps = async () => {
    stack,
    slug,
    description,
-   link
-        }
-      `;
+   link } `;
   const projects = await getClient(false).fetch(allProjectQuery);
-  return {
-    props: {
-      projects,
-    },
-  };
+  return { props: { projects } };
 };
 
 interface Props {
@@ -26,7 +21,7 @@ interface Props {
 }
 const Home = ({ projects }: Props) => {
   return (
-    <div className="max-w-5xl mx-auto ">
+    <div className="max-w-3xl lg:max-w-5xl mx-auto">
       <Head>
         <title>angelo@longoria</title>
         <meta
@@ -35,33 +30,21 @@ const Home = ({ projects }: Props) => {
         />
         <link rel="icon" href="/sword-in-stone.png" />
       </Head>
-
+      {/* Hero Section */}
+      <Hero />
+      {/* Recent Post Divider */}
+      <div className="divider"></div>
+      <h1 className="text-accent font-raleway font-bold">RECENT POST</h1>
       {/* Left content section */}
       <div className="flex w-full mx-auto justify-between md:flex-row flex-col">
-        <div className="md:max-w-xl2 w-full mx-auto items-center p-4 justify-center  border border-red-400 flex flex-col">
-          <p>Left Content Section</p>
+        <div className="mt-10 w-full mx-auto items-center justify-center  border border-red-400 border-opacity-10 flex flex-col space-y-8">
+          {projects.map((project) => (
+            <Project key={project._id} {...project} />
+          ))}
         </div>
-
-        {/* Right content section */}
-        <div className="hidden lg:flex flex-col w-full md:max-w-sm  md:order-2">
-          <div className="w-full border border-purple-300">
-            <div className="flex flex-row items-center justify-around w-full p-0 border border-yellow-800">
-              <h3 className="text-accent hidden md:visible normal-case text-xl font-bold">
-                SOCIAL
-              </h3>
-              <h3>Github</h3>
-              <h3>LinkedIn</h3>
-              <h3>Twitter</h3>
-            </div>
-          </div>
-          {/* <div className="max-w-2xl w-full flex flex-col items-center  space-y-12 border border-green-300">
-            {projects.map((project) => (
-              <Project {...project} />
-            ))}
-          </div> */}
-        </div>
-        {/* End of Right */}
       </div>
+      {/* End of Post Section */}
+      <div className="divider"></div>
     </div>
   );
 };

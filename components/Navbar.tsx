@@ -3,7 +3,7 @@ import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
 const Navbar = () => {
   return (
-    <div className="bg-base-100 max-w-5xl mx-auto">
+    <div className="bg-base-100 max-w-3xl lg:max-w-5xl mx-auto">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <a className="btn btn-ghost normal-case text-xl">
@@ -18,7 +18,7 @@ const Navbar = () => {
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-8 w-8"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -33,7 +33,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content  mt-3 p-4 shadow-md bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content  mt-3 p-4 shadow-md bg-base-300 rounded-box w-52"
             >
               <li>
                 <a>Projects</a>
