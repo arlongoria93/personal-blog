@@ -6,12 +6,13 @@ import { Projects } from "../typings";
 import Link from "next/link";
 
 export const getServerSideProps = async () => {
-  const allProjectQuery = `*[_type == 'post']{
+  const allProjectQuery = `*[_type == 'post'] | order(publishedAt desc){
     _id,
    title,
    stack,
    slug,
    description,
+   publishedAt,
    category[0]->{title},
    body,
    link } `;
@@ -25,7 +26,7 @@ interface Props {
 const Home = ({ projects }: Props) => {
   console.log(projects);
   return (
-    <div className="max-w-3xl lg:max-w-5xl mx-auto">
+    <div className="max-w-3xl min-h-screen lg:max-w-5xl bg-base-300 mx-auto">
       <Head>
         <title>angelo@longoria</title>
         <meta
@@ -37,11 +38,25 @@ const Home = ({ projects }: Props) => {
       {/* Hero Section */}
       <Hero />
       {/* Recent Post Divider */}
-      <div className="divider"></div>
-      <h1 className="text-accent font-raleway font-bold">RECENTLY PUBLISHED</h1>
+      <div className="divider lg:divider-horizontal bg-base-300"> </div>
+      <h1 className="text-accent bg-base-300 font-raleway font-bold">
+        RECENTLY PUBLISHED
+      </h1>
       {/* Left content section */}
       <div className="flex w-full mx-auto justify-between md:flex-row flex-col">
-        <div className="mt-10 w-full mx-auto items-center justify-center  border border-red-400 border-opacity-10 flex flex-col space-y-8">
+        <div className="mt-10 h-full w-full mx-auto items-center justify-start border border-red-400 border-opacity-10 flex flex-col space-y-8">
+          {projects.map((project) => (
+            <Project key={project._id} {...project} />
+          ))}
+          {projects.map((project) => (
+            <Project key={project._id} {...project} />
+          ))}
+          {projects.map((project) => (
+            <Project key={project._id} {...project} />
+          ))}
+          {projects.map((project) => (
+            <Project key={project._id} {...project} />
+          ))}
           {projects.map((project) => (
             <Project key={project._id} {...project} />
           ))}

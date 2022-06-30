@@ -5,11 +5,11 @@ import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div className="min-h-screen bg-base-300">
       <Navbar />
       <Component {...pageProps} />
       <Footer />
-    </>
+    </div>
   );
 }
 

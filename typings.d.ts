@@ -10,4 +10,5 @@ export interface Projects {
   category: {
     title: string;
   };
+  publishedAt: string;
 }
