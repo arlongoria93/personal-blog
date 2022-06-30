@@ -42,16 +42,21 @@ const Navbar = () => {
                   <a>Projects</a>
                 </li>
                 <li>
-                  <a>Resume</a>
+                  <a href="/Angelo-Longoria-Resume.pdf" target="blank">
+                    Resume
+                  </a>
                 </li>
                 <li className="text-white menu menu-horizontal">
-                  <a>
+                  <a target="_blank" href="https://github.com/arlongoria93">
                     <AiFillGithub size={23} />
                   </a>
-                  <a>
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/in/angelo-longoria/"
+                  >
                     <AiFillLinkedin size={23} />
                   </a>
-                  <a>
+                  <a target="_blank" href="https://twitter.com/angelo_longoria">
                     <AiOutlineTwitter size={23} />
                   </a>
                 </li>

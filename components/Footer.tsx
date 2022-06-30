@@ -5,11 +5,18 @@ const Footer = () => {
     <footer className="footer footer-center p-10 bg-base-300 text-base-content rounded">
       <div>
         <div className="grid grid-flow-col gap-4">
-          <a>
-            <AiFillGithub size={23} />
+          <a target="_blank" href="https://github.com/arlongoria93">
+            <AiFillGithub size={33} />
           </a>
-          <AiFillLinkedin size={23} />
-          <AiOutlineTwitter size={23} />
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/angelo-longoria/"
+          >
+            <AiFillLinkedin size={33} />
+          </a>
+          <a target="_blank" href="https://twitter.com/angelo_longoria">
+            <AiOutlineTwitter size={33} />
+          </a>
         </div>
       </div>
     </footer>

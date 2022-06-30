@@ -44,7 +44,7 @@ const Home = ({ projects }: Props) => {
       </h1>
       {/* Left content section */}
       <div className="flex w-full mx-auto justify-between md:flex-row flex-col">
-        <div className="mt-6 h-full w-full mx-auto items-center justify-start border border-red-400 border-opacity-10 flex flex-col space-y-8">
+        <div className="mt-6 h-full w-full mx-auto items-center justify-start flex flex-col space-y-8">
           {projects.map((project) => (
             <Project key={project._id} {...project} />
           ))}
