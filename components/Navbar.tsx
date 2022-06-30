@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="navbar bg-base-300">
           <div className="navbar-start">
             <Link href="/">
-              <a className="btn btn-ghost normal-case text-xl">
+              <a className="btn btn-ghost normal-case text-2xl">
                 <span className="text-primary">~</span>
                 <span className="text-accent ">{`${"["}`}</span>
                 angelo<span className="text-error">@</span>longoria
