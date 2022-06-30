@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from "react-icons/ai";
-
 const Navbar = () => {
   return (
     <div className="bg-base-300">
@@ -9,7 +8,6 @@ const Navbar = () => {
           <div className="navbar-start">
             <Link href="/">
               <a className="btn btn-ghost normal-case text-2xl">
-                <span className="text-primary">~</span>
                 <span className="text-accent ">{`${"["}`}</span>
                 angelo<span className="text-error">@</span>longoria
                 <span className="text-accent ">{`${"]"}`}</span>

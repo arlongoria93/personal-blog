@@ -9,9 +9,11 @@ const Hero = () => {
             <img src="/avatar.JPG" alt="avatar" />
           </div>
         </div>
-        <h3 className="text-content text-2xl font-bold">
-          Im, Angelo. This is my home where keep all my thoughts and projects!
-        </h3>
+        <div className="w-1/2">
+          <h3 className="text-content text-xl ">
+            Im, Angelo. This is my home where keep all my thoughts and projects!
+          </h3>
+        </div>
       </div>
     </div>
   );
