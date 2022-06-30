@@ -35,15 +35,15 @@ const Project = ({
               {str}
             </h3>
           </div>
-          <h2 className="text-3xl font-raleway font-bold group-hover:opacity-95 ">
+          <h2 className="text-3xl font-raleway font-bold group-hover:text-accent">
             {title}
           </h2>
           <h4 className="font-roboto text-lg">{description}</h4>
-          <div className="flex flex-row items-center space-x-1 ">
+          <div className="flex flex-row items-center">
             <h3 className="font-bold font-raleway text-md">Read More</h3>
             <IoMdArrowRoundForward
               size={19}
-              className="text-info opacity-80 hidden group-hover:inline  transition duration-0 hover:duration-150"
+              className="text-accent  hidden group-hover:inline  transition duration-0 hover:duration-150"
             />
           </div>
         </div>
