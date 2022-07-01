@@ -2,6 +2,7 @@ import React from "react";
 import { GetStaticProps } from "next";
 import { getClient } from "../../lib/sanity.server";
 import { Projects } from "../../typings";
+import PortableText from "react-portable-text";
 interface Props {
   post: Projects;
 }
@@ -15,15 +16,32 @@ const Projects = ({ post }: Props) => {
           {post.title}
         </h1>
 
-        <div className="flex justify-center w-full">
-          <h3>
-            Tech Used:
-            <span className="flex">
-              {post.stack?.map((stack) => (
-                <h1>{stack}</h1>
-              ))}
-            </span>
-          </h3>
+        <div className="flex flex-row items-center space-x-4 justify-center w-full">
+          {post.stack && (
+            <h3 className="font-raleway font-bold text-lg">Tech Used:</h3>
+          )}
+          {post.stack?.map((stack) => (
+            <h1 className="font-roboto font-normal">{stack}</h1>
+          ))}
+        </div>
+        <div className="max-w-3xl p-4 lg:max-w-4xl mt-8">
+          {post.body && (
+            <PortableText
+              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+              content={post.body}
+              serializers={{
+                h1: (props: any) => (
+                  <h1 className="font-raleway font-bold text-lg">
+                    {props.children}
+                  </h1>
+                ),
+                p: (props: any) => (
+                  <p className="font-bold font-roboto ">{props.children}</p>
+                ),
+              }}
+            />
+          )}
         </div>
       </div>
     </div>
@@ -39,7 +57,7 @@ export const getStaticPaths = async () => {
         }
     }`;
   const posts = await getClient(false).fetch(query);
-  const paths = posts.map((post: project) => ({
+  const paths = posts.map((post: Projects) => ({
     params: {
       slug: post.slug.current,
     },
