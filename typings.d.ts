@@ -6,7 +6,8 @@ export interface Projects {
     current: string;
   };
   description: string;
-  link: string;
+  github: string;
+  deployed: string;
   category: {
     title: string;
   };
