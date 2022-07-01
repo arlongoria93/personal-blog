@@ -3,6 +3,7 @@ import { GetStaticProps } from "next";
 import { getClient } from "../../lib/sanity.server";
 import { Projects } from "../../typings";
 import PortableText from "react-portable-text";
+import { FaGlobeAmericas, FaGithub } from "react-icons/fa";
 interface Props {
   post: Projects;
 }
@@ -24,6 +25,23 @@ const Projects = ({ post }: Props) => {
             <h1 className="font-roboto font-normal">{stack}</h1>
           ))}
         </div>
+        {post.github && post.deployed ? (
+          <div className="flex flex-row p-4">
+            <a target="_blank" href={post.github}>
+              <div className="btn btn-ghost">
+                <FaGithub size={20} />
+              </div>
+            </a>
+
+            <a target="_blank" href={post.deployed}>
+              <div className="btn btn-ghost">
+                <FaGlobeAmericas size={20} />
+              </div>
+            </a>
+          </div>
+        ) : (
+          ""
+        )}
         <div className="max-w-3xl p-4 lg:max-w-4xl mt-8">
           {post.body && (
             <PortableText
@@ -74,7 +92,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         title,
         body,
         stack,
-
+        github,
+        deployed
        }`;
 
   const post = await getClient(false).fetch(query, {

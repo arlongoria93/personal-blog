@@ -17,7 +17,6 @@ export default {
       },
     },
     { name: "description", title: "Description", type: "text" },
-    { name: "link", title: "Link", type: "url" },
     {
       name: "category",
       title: "Category",
@@ -33,6 +32,16 @@ export default {
       name: "body",
       title: "Body",
       type: "blockContent",
+    },
+    {
+      name: "github",
+      title: "Github",
+      type: "url",
+    },
+    {
+      name: "deployed",
+      title: "Deployed",
+      type: "url",
     },
   ],
 };
