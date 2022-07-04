@@ -13,8 +13,6 @@ const Project = ({
   category,
   publishedAt,
 }: project) => {
-  console.log(publishedAt);
-
   const now = new Date(publishedAt);
   const offsetMs = now.getTimezoneOffset() * 60 * 1000;
   const dateLocal = new Date(now.getTime() - offsetMs);

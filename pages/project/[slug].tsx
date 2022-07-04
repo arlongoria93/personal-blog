@@ -8,7 +8,6 @@ interface Props {
   post: Projects;
 }
 const Projects = ({ post }: Props) => {
-  console.log(post);
   return (
     <div className="max-w-3xl flex flex-col min-h-screen lg:max-w-5xl bg-base-300 mx-auto">
       <div className="divider"></div>
