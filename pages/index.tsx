@@ -74,7 +74,7 @@ const Home = ({ projects }: Props) => {
                 <div className="flex flex-row items-center w-full justify-start space-x-4">
                   <BsGithub size={33} style={{ color: "white" }} />
                   <a
-                    className="text-base-content text-lg"
+                    className="text-base-content hover:text-primary-focus transition delay-50 ease-in-out text-lg"
                     target="_blank"
                     href="https://github.com/arlongoria93"
                   >
@@ -84,17 +84,17 @@ const Home = ({ projects }: Props) => {
                 <div className="flex flex-row items-center w-full justify-start space-x-4">
                   <BsLinkedin size={33} style={{ color: "#0077bf" }} />{" "}
                   <a
-                    className="text-base-content text-lg"
+                    className="text-base-content hover:text-primary-focus transition delay-50 ease-in-out text-lg"
                     target="_blank"
                     href="https://www.linkedin.com/in/angelo-longoria/"
                   >
                     LinkedIn
                   </a>
                 </div>
-                <div className="flex flex-row items-center w-full justify-start space-x-4">
+                <div className="flex flex-row items-center  w-full justify-start space-x-4">
                   <BsTwitter style={{ color: "#1DA1F2" }} size={33} />
                   <a
-                    className="text-base-content text-lg"
+                    className="text-base-content hover:text-primary-focus transition delay-50 ease-in-out text-lg"
                     target="_blank"
                     href="https://twitter.com/angelo_longoria"
                   >
