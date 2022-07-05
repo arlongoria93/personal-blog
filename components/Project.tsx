@@ -33,7 +33,7 @@ const Project = ({
               {str}
             </h3>
           </div>
-          <h2 className="text-3xl font-raleway font-bold group-hover:text-accent">
+          <h2 className="text-3xl font-raleway font-bold transition delay-50 ease-in-out group-hover:text-primary-focus">
             {title}
           </h2>
           <h4 className="font-roboto text-lg">{description}</h4>
@@ -41,7 +41,7 @@ const Project = ({
             <h3 className="font-bold font-raleway text-md">Read More</h3>
             <IoMdArrowRoundForward
               size={19}
-              className="text-accent  hidden group-hover:inline  transition duration-0 hover:duration-150"
+              className="text-primary-focus  hidden group-hover:inline transition delay-50 ease-in-out"
             />
           </div>
         </div>
