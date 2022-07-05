@@ -53,7 +53,7 @@ const Home = ({ projects }: Props) => {
             <Project key={project._id} {...project} />
           ))}
         </div>
-        <div className="hidden lg:inline-flex  w-1/4    flex-col">
+        <div className="hidden lg:inline-flex p-2  w-1/4    flex-col">
           <div className="flex h-full p-4 text-warning opacity-90 flex-col font-raleway font-bold  space-y-8 text-xl">
             <div>
               <h1>FEATURED TOPICS</h1>
