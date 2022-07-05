@@ -4,7 +4,7 @@ import { Projects } from "../../typings";
 import Link from "next/link";
 import Project from "../../components/Project";
 import ReactPaginate from "react-paginate";
-import { useState, usEffect } from "react";
+import { useState } from "react";
 
 export const getServerSideProps = async () => {
   const allProjectQuery = `*[_type == 'post']| order(publishedAt desc){
