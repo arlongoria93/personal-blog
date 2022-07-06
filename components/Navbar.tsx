@@ -37,9 +37,11 @@ const Navbar = () => {
                 tabIndex={0}
                 className="menu menu-compact dropdown-content  mt-3 p-4 shadow-md bg-base-300 rounded-box w-52"
               >
-                <li>
-                  <a className="text-lg">Projects</a>
-                </li>
+                <Link href="/projects">
+                  <li>
+                    <a className="text-lg">Projects</a>
+                  </li>
+                </Link>
                 <li>
                   <a
                     className="text-lg"
