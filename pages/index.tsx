@@ -41,7 +41,7 @@ const Home = ({ projects }: Props) => {
       {/* Hero Section */}
 
       {/* Recent Post Divider */}
-      <div className="divider lg:divider-horizontal bg-base-300"> </div>
+      <div className="divider lg:divider-horizontal bg-base-300"></div>
 
       {/* Left content section */}
       <div className="flex w-full mx-auto justify-between lg:flex-row flex-col">
