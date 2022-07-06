@@ -25,6 +25,7 @@ export const getServerSideProps = async () => {
 interface Props {
   projects: Projects[];
 }
+
 const Home = ({ projects }: Props) => {
   console.log(projects);
   return (
@@ -59,12 +60,16 @@ const Home = ({ projects }: Props) => {
               <h1>FEATURED TOPICS</h1>
               <div className="flex flex-col mt-4 space-y-4">
                 <div className="flex flex-col  items-start text-lg w-full justify-start space-y-4">
-                  <h3 className="font-roboto text-neutral hover:cursor-pointer  font-bold pr-4 pt-1 mr-2 pb-1 pl-4 bg-base-content rounded">
-                    article
-                  </h3>
-                  <h3 className="font-roboto hover:cursor-pointer text-success font-bold pr-4 pt-1 mr-2 pb-1 pl-4 bg-base-100 rounded">
-                    project
-                  </h3>
+                  <Link href="/articles">
+                    <h3 className="font-roboto text-neutral hover:cursor-pointer  font-bold pr-4 pt-1 mr-2 pb-1 pl-4 bg-base-content rounded">
+                      article
+                    </h3>
+                  </Link>
+                  <Link href="/projects">
+                    <h3 className="font-roboto hover:cursor-pointer text-success font-bold pr-4 pt-1 mr-2 pb-1 pl-4 bg-base-100 rounded">
+                      project
+                    </h3>
+                  </Link>
                 </div>
               </div>
             </div>
