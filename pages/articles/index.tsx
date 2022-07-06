@@ -23,6 +23,7 @@ export const getServerSideProps = async () => {
 
 interface Props {
   projects: Projects[];
+  selected: number;
 }
 
 const Posts = ({ projects }: Props) => {
@@ -38,7 +39,7 @@ const Posts = ({ projects }: Props) => {
       return <Project key={project._id} {...project} />;
     });
 
-  const changePage = ({ selected }) => {
+  const changePage = ({ selected }: Props) => {
     setPageNumber(selected);
   };
 
