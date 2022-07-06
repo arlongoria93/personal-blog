@@ -20,19 +20,21 @@ const Projects = ({ post }: Props) => {
           {post.stack && (
             <h3 className="font-raleway font-bold text-lg">Tech Used:</h3>
           )}
-          {post.stack?.map((stack) => (
-            <h1 className="font-roboto font-normal">{stack}</h1>
+          {post.stack?.map((stack, i) => (
+            <h1 key={i} className="font-roboto font-normal">
+              {stack}
+            </h1>
           ))}
         </div>
         {post.github && post.deployed ? (
           <div className="flex flex-row p-4">
-            <a target="_blank" href={post.github}>
+            <a target="_blank" rel="noopener noreferrer" href={post.github}>
               <div className="btn btn-ghost">
                 <FaGithub size={20} />
               </div>
             </a>
 
-            <a target="_blank" href={post.deployed}>
+            <a target="_blank" rel="noopener noreferrer" href={post.deployed}>
               <div className="btn btn-ghost">
                 <FaGlobeAmericas size={20} />
               </div>

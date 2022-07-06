@@ -50,16 +50,25 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="text-base-content mt-4 menu menu-horizontal">
-                  <a target="_blank" href="https://github.com/arlongoria93">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/arlongoria93"
+                  >
                     <BsGithub size={23} />
                   </a>
                   <a
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://www.linkedin.com/in/angelo-longoria/"
                   >
                     <BsLinkedin size={23} />
                   </a>
-                  <a target="_blank" href="https://twitter.com/angelo_longoria">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://twitter.com/angelo_longoria"
+                  >
                     <BsTwitter size={23} />
                   </a>
                 </li>

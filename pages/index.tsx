@@ -81,6 +81,7 @@ const Home = ({ projects }: Props) => {
                   <a
                     className="text-base-content hover:text-primary-focus transition delay-50 ease-in-out text-lg"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://github.com/arlongoria93"
                   >
                     Github
@@ -91,6 +92,7 @@ const Home = ({ projects }: Props) => {
                   <a
                     className="text-base-content hover:text-primary-focus transition delay-50 ease-in-out text-lg"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://www.linkedin.com/in/angelo-longoria/"
                   >
                     LinkedIn
@@ -101,6 +103,7 @@ const Home = ({ projects }: Props) => {
                   <a
                     className="text-base-content hover:text-primary-focus transition delay-50 ease-in-out text-lg"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://twitter.com/angelo_longoria"
                   >
                     Twitter
