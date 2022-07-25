@@ -4,6 +4,7 @@ export default {
   type: "document",
   fields: [
     { name: "title", title: "Title", type: "string" },
+    { name: "mainImage", title: "Main Image", type: "image" },
     { name: "stack", title: "Stack", type: "array", of: [{ type: "string" }] },
     {
       name: "slug",

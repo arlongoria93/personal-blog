@@ -1,5 +1,6 @@
 export interface Projects {
   _id: string;
+  mainImage: string;
   title: string;
   stack: string[];
   slug: {

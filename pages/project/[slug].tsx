@@ -4,10 +4,13 @@ import { getClient } from "../../lib/sanity.server";
 import { Projects } from "../../typings";
 import PortableText from "react-portable-text";
 import { FaGlobeAmericas, FaGithub } from "react-icons/fa";
+import { urlFor } from "../../lib/sanity";
+
 interface Props {
   post: Projects;
 }
 const Projects = ({ post }: Props) => {
+  console.log(post);
   return (
     <div className="max-w-3xl flex flex-col min-h-screen lg:max-w-5xl bg-base-300 mx-auto">
       <div className="divider"></div>
@@ -44,6 +47,11 @@ const Projects = ({ post }: Props) => {
           ""
         )}
         <div className="max-w-3xl p-4 lg:max-w-4xl mt-8">
+          <img
+            src={urlFor(post.mainImage).url()}
+            alt={post.title}
+            className="rounded shadow-sm"
+          />
           {post.body && (
             <PortableText
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
@@ -51,12 +59,25 @@ const Projects = ({ post }: Props) => {
               content={post.body}
               serializers={{
                 h1: (props: any) => (
-                  <h1 className="font-raleway font-bold text-lg">
+                  <h1 className="mb-12 font-raleway font-bold text-3xl">
                     {props.children}
                   </h1>
                 ),
                 p: (props: any) => (
-                  <p className="font-bold font-roboto ">{props.children}</p>
+                  <p className="font-bold font-roboto text-2xl">
+                    {props.children}
+                  </p>
+                ),
+
+                normal: (props: any) => (
+                  <p className="font-roboto text-xl leading-relaxed">
+                    {props.children}
+                  </p>
+                ),
+                link: (props: any) => (
+                  <a href={props.href} target="_blank">
+                    <span className="text-secondary">{props.children}</span>
+                  </a>
                 ),
               }}
             />
@@ -94,6 +115,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         body,
         stack,
         github,
+        mainImage,
         deployed
        }`;
 
