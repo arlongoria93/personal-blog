@@ -47,11 +47,13 @@ const Projects = ({ post }: Props) => {
           ""
         )}
         <div className="max-w-3xl p-4 lg:max-w-4xl mt-8">
-          <img
-            src={urlFor(post.mainImage).url()}
-            alt={post.title}
-            className="rounded shadow-sm"
-          />
+          {post.mainImage && (
+            <img
+              src={urlFor(post.mainImage).url()!}
+              alt={post.title}
+              className="rounded shadow-sm"
+            />
+          )}
           {post.body && (
             <PortableText
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
