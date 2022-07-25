@@ -75,7 +75,7 @@ const Projects = ({ post }: Props) => {
                   </p>
                 ),
                 link: (props: any) => (
-                  <a href={props.href} target="_blank" rel="noreferrer">
+                  <a href={props.href} target="_blank" rel="noreferrer ">
                     <span className="text-secondary">{props.children}</span>
                   </a>
                 ),
