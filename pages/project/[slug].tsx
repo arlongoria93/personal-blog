@@ -10,7 +10,6 @@ interface Props {
   post: Projects;
 }
 const Projects = ({ post }: Props) => {
-  console.log(post);
   return (
     <div className="max-w-3xl flex flex-col min-h-screen lg:max-w-5xl bg-base-300 mx-auto">
       <div className="divider"></div>
@@ -29,23 +28,23 @@ const Projects = ({ post }: Props) => {
             </h1>
           ))}
         </div>
-        {post.github && post.deployed ? (
-          <div className="flex flex-row p-4">
+
+        <div className="flex flex-row p-4">
+          {post.github && (
             <a target="_blank" rel="noopener noreferrer" href={post.github}>
               <div className="btn btn-ghost">
                 <FaGithub size={20} />
               </div>
             </a>
-
+          )}
+          {post.deployed && (
             <a target="_blank" rel="noopener noreferrer" href={post.deployed}>
               <div className="btn btn-ghost">
                 <FaGlobeAmericas size={20} />
               </div>
             </a>
-          </div>
-        ) : (
-          ""
-        )}
+          )}
+        </div>
         <div className="max-w-3xl p-4 lg:max-w-4xl mt-8">
           {post.mainImage && (
             <img
@@ -56,6 +55,7 @@ const Projects = ({ post }: Props) => {
           )}
           {post.body && (
             <PortableText
+              className="font-roboto text-xl flex flex-col leading-relaxed gap-4"
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
               content={post.body}
@@ -66,7 +66,7 @@ const Projects = ({ post }: Props) => {
                   </h1>
                 ),
                 p: (props: any) => (
-                  <p className="font-bold font-roboto text-2xl">
+                  <p className="font-light font-roboto text-2xl">
                     {props.children}
                   </p>
                 ),
