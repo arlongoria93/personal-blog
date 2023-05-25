@@ -25,33 +25,38 @@ const Project = ({
     <Link href={`/project/${slug.current}`}>
       <div
         key={_id}
-        className="flex group bg-base-300 flex-row rounded hover:cursor-pointer  justify-between space-y-4   w-full "
+        className="flex flex-row justify-between w-full space-y-4 rounded group bg-base-300 hover:cursor-pointer "
       >
-        <div className="flex flex-col bg-base-300 space-y-4">
+        <div className="flex flex-col space-y-4 bg-base-300">
           <div>
-            <h3 className="text-neutral-content font-roboto font-light opacity-60">
+            <h3 className="font-light text-neutral-content font-roboto opacity-60">
               {str}
             </h3>
           </div>
-          <h2 className="text-3xl font-raleway font-bold transition delay-50 ease-in-out group-hover:text-primary-focus">
-            {title}
-          </h2>
-          <h4 className="font-roboto text-lg">{description}</h4>
+          {category.title === "article" ? (
+            <h2 className="text-3xl font-bold transition ease-in-out font-raleway delay-50 group-hover:text-primary-focus">
+              {title}
+            </h2>
+          ) : (
+            <h2 className="text-3xl font-bold transition ease-in-out text-success font-raleway delay-50 group-hover:text-neutral-content">
+              {title}
+            </h2>
+          )}
+
+          <h4 className="text-lg font-roboto">{description}</h4>
           <div className="flex flex-row items-center">
-            <h3 className="font-bold font-raleway text-md">Read More</h3>
-            <IoMdArrowRoundForward
-              size={19}
-              className="text-primary-focus  hidden group-hover:inline transition delay-50 ease-in-out"
-            />
+            <h3 className="font-bold font-raleway text-md text-primary-focus hover:text-neutral-content">
+              Read More
+            </h3>
           </div>
         </div>
         <div>
           {category.title === "article" ? (
-            <h3 className="font-roboto text-neutral font-bold pr-4 pt-1 mr-2 pb-1 pl-4 bg-base-content rounded">
+            <h3 className="pt-1 pb-1 pl-4 pr-4 mr-2 font-bold rounded font-roboto text-neutral bg-base-content">
               {category.title}
             </h3>
           ) : (
-            <h3 className="font-roboto text-success font-bold pr-4 pt-1 mr-2 pb-1 pl-4 bg-base-100 rounded">
+            <h3 className="pt-1 pb-1 pl-4 pr-4 mr-2 font-bold rounded font-roboto text-success bg-base-100">
               {category.title}
             </h3>
           )}
