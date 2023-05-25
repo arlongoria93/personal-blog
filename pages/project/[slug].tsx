@@ -11,19 +11,19 @@ interface Props {
 }
 const Projects = ({ post }: Props) => {
   return (
-    <div className="max-w-3xl flex flex-col min-h-screen lg:max-w-5xl bg-base-300 mx-auto">
+    <div className="flex flex-col max-w-3xl min-h-screen mx-auto lg:max-w-5xl bg-base-300">
       <div className="divider"></div>
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="text-warning opacity-80 text-3xl bg-base-300 font-raleway font-bold">
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-3xl font-bold text-warning opacity-80 bg-base-300 font-raleway">
           {post.title}
         </h1>
 
-        <div className="flex flex-row items-center space-x-4 justify-center w-full">
+        <div className="flex flex-row items-center justify-center w-full space-x-4">
           {post.stack && (
-            <h3 className="font-raleway font-bold text-lg">Tech Used:</h3>
+            <h3 className="text-lg font-bold font-raleway">Tech Used:</h3>
           )}
           {post.stack?.map((stack, i) => (
-            <h1 key={i} className="font-roboto font-normal">
+            <h1 key={i} className="font-normal font-roboto">
               {stack}
             </h1>
           ))}
@@ -33,19 +33,19 @@ const Projects = ({ post }: Props) => {
           {post.github && (
             <a target="_blank" rel="noopener noreferrer" href={post.github}>
               <div className="btn btn-ghost">
-                <FaGithub size={20} />
+                <FaGithub size={30} />
               </div>
             </a>
           )}
           {post.deployed && (
             <a target="_blank" rel="noopener noreferrer" href={post.deployed}>
               <div className="btn btn-ghost">
-                <FaGlobeAmericas size={20} />
+                <FaGlobeAmericas size={30} />
               </div>
             </a>
           )}
         </div>
-        <div className="max-w-3xl p-4 lg:max-w-4xl mt-8">
+        <div className="max-w-3xl p-4 mt-8 lg:max-w-4xl">
           {post.mainImage && (
             <img
               src={urlFor(post.mainImage).url()!}
@@ -55,24 +55,24 @@ const Projects = ({ post }: Props) => {
           )}
           {post.body && (
             <PortableText
-              className="font-roboto text-xl flex flex-col leading-relaxed gap-4"
+              className="flex flex-col gap-8 text-xl leading-relaxed font-roboto"
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
               content={post.body}
               serializers={{
                 h1: (props: any) => (
-                  <h1 className="mb-12 font-raleway font-bold text-3xl">
+                  <h1 className="hidden mb-12 text-3xl font-bold font-raleway">
                     {props.children}
                   </h1>
                 ),
                 p: (props: any) => (
-                  <p className="font-light font-roboto text-2xl">
+                  <p className="text-2xl font-light font-roboto">
                     {props.children}
                   </p>
                 ),
 
                 normal: (props: any) => (
-                  <p className="font-roboto text-xl leading-relaxed">
+                  <p className="text-xl leading-relaxed font-roboto">
                     {props.children}
                   </p>
                 ),
